@@ -46,3 +46,21 @@ body {
   50% { opacity: 0; }
 }
 
+/* --- INFINITE SLIDER ANIMATION --- */
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  /* Mag-i-slide pakanan pakaliwa. Ang -50% ay kailangan dahil dodoblehin natin ang items sa code para maging seamless */
+  100% { transform: translateX(-50%); }
+}
+
+.animate-scroll {
+  /* 40s ang bilis. Pwede mong taasan para bumagal, o babaan para bumilis */
+  animation: scroll 40s linear infinite;
+  /* Kailangan ng width na kayang hawakan lahat ng items */
+  width: max-content;
+}
+
+/* Para huminto yung pag-slide kapag tinapatan ng mouse yung card */
+.animate-scroll:hover {
+  animation-play-state: paused;
+}

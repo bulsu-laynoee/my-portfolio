@@ -1,0 +1,58 @@
+export const certificationsData = [
+  {
+    title: "Network and Troubleshooting Course",
+    issuer: "Cisco Networking Academy",
+    date: "March 2024",
+    image: "/certifications/network-troubleshooting.png", 
+    description: "Completed comprehensive training on network configuration, infrastructure maintenance, and advanced troubleshooting techniques.",
+  },
+  {
+    title: "ISO/IEC 20000 IT Service Management Associate",
+    issuer: "IT Service Management",
+    date: "2024",
+    image: "/certifications/iso-20000.png", 
+    description: "Certified in the international standard for IT service management, focusing on delivering high-quality IT services.",
+  },
+  {
+    title: "SPES Intern",
+    issuer: "City Information Technology Office",
+    date: "July - September 2024",
+    image: "/certifications/spes-intern.png", 
+    description: "Special Program for Employment of Students. Gained hands-on experience in municipal IT operations and support.",
+  },
+    {
+    title: "Introduction to Cybersecurity",
+    issuer: "Cisco Networking Academy",
+    date: "2025",
+    image: "/certifications/intro-cybersecurity.png", 
+    description: "Gained foundational knowledge in protecting networks, defending against cyber attacks, and maintaining data privacy.",
+  },
+  {
+    title: "Cyber Threat Management",
+    issuer: "Cisco Networking Academy",
+    date: "2025",
+    image: "/certifications/cyber-threat.png", 
+    description: "Developed skills in threat intelligence, identifying vulnerabilities, and implementing security protocols to mitigate risks.",
+  },
+  {
+    title: "Network Support and Security",
+    issuer: "Cisco Networking Academy",
+    date: "2025",
+    image: "/certifications/network-support.png", 
+    description: "Validated expertise in providing robust network support and ensuring the integrity and security of IT infrastructures.",
+  },
+  {
+    title: "Salesforce Supported Virtual Internship Program",
+    issuer: "Salesforce - Philippines",
+    date: "2025",
+    image: "/certifications/salesforce.png", 
+    description: "Completed virtual internship focusing on CRM technologies, cloud computing, and Salesforce platform administration.",
+  },
+  {
+    title: "Best in Capstone in Service Management Specialization",
+    issuer: "Academic Award",
+    date: "2026",
+    image: "/certifications/best-capstone.png", 
+    description: "Awarded for demonstrating exceptional skills in systems development, project management, and service management methodologies.",
+  },
+];

@@ -62,23 +62,18 @@ export default function RootLayout({
                 <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-blue-600 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
               </a>
 
-              {/* --- BAGONG CONTACT LINK --- */}
               <a href="/#contact" className="relative group hover:text-blue-600 transition-colors duration-300">
                 Contact
                 <span className="absolute left-0 -bottom-1 w-full h-[2px] bg-blue-600 rounded-full scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
               </a>
               
-              {/* --- PREMIUM BLUE RESUME BUTTON --- */}
               <a 
                 href="CV-EDWARD-LAYNO-Latest.pdf" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="relative overflow-hidden group flex items-center gap-2 px-6 py-2.5 ml-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-blue-500/40 hover:-translate-y-0.5"
               >
-                {/* Shimmer Effect Layer */}
                 <div className="absolute inset-0 -translate-x-full bg-gradient-to-r from-transparent via-white/30 to-transparent group-hover:translate-x-full transition-transform duration-700 ease-in-out"></div>
-                
-                {/* Content */}
                 <FaFileDownload className="text-[15px] relative z-10 transition-transform duration-300 group-hover:-translate-y-0.5 text-white" />
                 <span className="text-sm font-semibold tracking-wide relative z-10">CV</span>
               </a>
