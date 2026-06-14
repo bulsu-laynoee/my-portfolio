@@ -10,7 +10,7 @@ export const certificationsData = [
     title: "ISO/IEC 20000 IT Service Management Associate",
     issuer: "IT Service Management",
     date: "2024",
-    image: "/certifications/iso-20000.png", 
+    image: "/certifications/skillfront.jpg", 
     description: "Certified in the international standard for IT service management, focusing on delivering high-quality IT services.",
   },
   {
@@ -24,7 +24,7 @@ export const certificationsData = [
     title: "Introduction to Cybersecurity",
     issuer: "Cisco Networking Academy",
     date: "2025",
-    image: "/certifications/intro-cybersecurity.png", 
+    image: "/certifications/intro-to-cybersecurity.jpg", 
     description: "Gained foundational knowledge in protecting networks, defending against cyber attacks, and maintaining data privacy.",
   },
   {
