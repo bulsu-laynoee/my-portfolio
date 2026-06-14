@@ -88,10 +88,6 @@ export default function About() {
               About Me
             </h3>
             
-            <p className="text-blue-600 font-bold mb-8 text-xl bg-blue-50 inline-block px-4 py-1.5 rounded-full border border-blue-100">
-              IT Professional & Web Developer
-            </p>
-            
             <div className="prose prose-lg text-gray-600 space-y-5 leading-relaxed max-w-none">
               <p>
                 I am a recent <strong className="text-gray-800">Information Technology graduate</strong> from <strong className="text-gray-800">Bulacan State University</strong> with a solid foundation in technical support. I specialize in diagnosing computer hardware issues, resolving software complications, and performing basic network troubleshooting to ensure smooth and efficient IT operations.
