@@ -9,9 +9,10 @@ import {
   FaPaperPlane, 
   FaCheckCircle, 
   FaSpinner,
-  FaPhoneAlt,    // Bagong import para sa Phone
-  FaInstagram,   // Bagong import para sa Instagram
-  FaViber        // Bagong import para sa Viber
+  FaPhoneAlt,
+  FaInstagram,   
+  // BAGONG IMPORT: GitHub icon
+  FaGithub        
 } from "react-icons/fa";
 
 export default function Contact() {
@@ -25,6 +26,7 @@ export default function Contact() {
     const data = Object.fromEntries(formData);
 
     try {
+      // Using FormSubmit API to send email directly to your Gmail
       const response = await fetch("https://formsubmit.co/ajax/edward.layno.13@gmail.com", {
         method: "POST",
         headers: {
@@ -36,8 +38,8 @@ export default function Contact() {
           email: data.email,
           subject: data.subject,
           message: data.message,
-          _template: "box", 
-          _captcha: "false" 
+          _template: "box", // Beautiful email template
+          _captcha: "false" // Disable annoying captcha for better UX
         }),
       });
 
@@ -78,12 +80,13 @@ export default function Contact() {
                   <button 
                     onClick={() => setStatus("idle")}
                     className="px-6 py-2.5 bg-white border border-green-200 text-green-700 rounded-full hover:bg-green-50 hover:shadow-sm transition-all font-semibold text-sm"
+                    suppressHydrationWarning
                   >
                     Send another message
                   </button>
                 </div>
               ) : (
-                <form className="space-y-4" onSubmit={handleSubmit}>
+                <form className="space-y-4" onSubmit={handleSubmit} suppressHydrationWarning>
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                     <div className="group">
                       <input 
@@ -92,6 +95,7 @@ export default function Contact() {
                         required
                         placeholder="Your Name" 
                         className="w-full bg-slate-50/50 border border-gray-200 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 focus:bg-white transition-all placeholder-gray-400 text-gray-800 text-sm"
+                        suppressHydrationWarning
                       />
                     </div>
                     <div className="group">
@@ -101,6 +105,7 @@ export default function Contact() {
                         required
                         placeholder="Your Email" 
                         className="w-full bg-slate-50/50 border border-gray-200 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 focus:bg-white transition-all placeholder-gray-400 text-gray-800 text-sm"
+                        suppressHydrationWarning
                       />
                     </div>
                   </div>
@@ -111,6 +116,7 @@ export default function Contact() {
                       required
                       placeholder="Subject" 
                       className="w-full bg-slate-50/50 border border-gray-200 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 focus:bg-white transition-all placeholder-gray-400 text-gray-800 text-sm"
+                      suppressHydrationWarning
                     />
                   </div>
                   <div>
@@ -120,6 +126,7 @@ export default function Contact() {
                       placeholder="Tell me about your project..." 
                       rows={5}
                       className="w-full bg-slate-50/50 border border-gray-200 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 focus:bg-white transition-all placeholder-gray-400 text-gray-800 text-sm resize-none"
+                      suppressHydrationWarning
                     ></textarea>
                   </div>
 
@@ -132,6 +139,7 @@ export default function Contact() {
                       type="submit" 
                       disabled={status === "submitting"}
                       className="group relative inline-flex items-center justify-center gap-2 px-8 py-3.5 bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold rounded-xl hover:shadow-lg hover:shadow-blue-500/30 hover:-translate-y-0.5 transition-all duration-300 disabled:opacity-70 disabled:cursor-not-allowed w-full sm:w-auto text-sm"
+                      suppressHydrationWarning
                     >
                       {status === "submitting" ? (
                         <>
@@ -184,7 +192,7 @@ export default function Contact() {
                     </div>
                   </div>
 
-                  {/* Phone Number - BAGONG ADD */}
+                  {/* Phone Number */}
                   <div className="flex items-start space-x-4 group">
                     <div className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center flex-shrink-0 group-hover:bg-blue-500/40 transition-colors">
                       <FaPhoneAlt className="text-lg text-blue-300" />
@@ -209,9 +217,11 @@ export default function Contact() {
                   <a href="https://www.linkedin.com/in/edward-layno/" aria-label="LinkedIn" className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-blue-500 hover:-translate-y-1 transition-all text-white text-lg">
                     <FaLinkedin />
                   </a>
-                  {/* BAGONG ADD: Instagram at Viber */}
                   <a href="https://www.instagram.com/layno.edward/" aria-label="Instagram" className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-blue-500 hover:-translate-y-1 transition-all text-white text-lg">
                     <FaInstagram />
+                  </a>
+                  <a href="https://github.com/bulsu-laynoee" aria-label="GitHub" className="w-10 h-10 bg-white/10 rounded-xl flex items-center justify-center hover:bg-blue-500 hover:-translate-y-1 transition-all text-white text-lg">
+                    <FaGithub />
                   </a>
                 </div>
               </div>

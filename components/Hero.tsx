@@ -4,9 +4,10 @@ export default function Hero() {
   return (
     <section id="home" className="min-h-screen flex flex-col justify-center items-start pt-16">
 
-      <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-gray-900 leading-tight">
-        Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Edward Layno</span>.
-      </h1>
+    <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-gray-900 leading-tight">
+    Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Edward Layno</span>
+    <span className="text-cyan-500 font-light ml-1 my-cursor">|</span>
+    </h1>
       
       <p className="text-lg text-gray-600 max-w-2xl mt-6 leading-relaxed">
         I specialize in building scalable web applications, robust APIs, and user-friendly interfaces using modern technologies like React, Next.js, and Laravel.

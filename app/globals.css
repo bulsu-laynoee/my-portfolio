@@ -25,3 +25,24 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+/* I-setup ang animation variable sa loob ng @theme (Tailwind v4 format) */
+@theme {
+  --animate-blink: blink 1s step-end infinite;
+}
+
+/* Idagdag ang mismong keyframes */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+/* IDAGDAG ITO SA PINAKABABA NG GLOBALS.CSS */
+
+.my-cursor {
+  animation: custom-blink 1s step-end infinite;
+}
+
+@keyframes custom-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+

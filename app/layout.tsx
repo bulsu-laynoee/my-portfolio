@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="scroll-smooth">
+    <html lang="en" className="scroll-smooth" suppressHydrationWarning>
       <body className={`${inter.className} bg-slate-50 text-gray-900 min-h-screen flex flex-col relative`}>
         
         {/* --- LIVE ANIMATED BACKGROUND --- */}
@@ -70,7 +70,7 @@ export default function RootLayout({
               
               {/* --- PREMIUM BLUE RESUME BUTTON --- */}
               <a 
-                href="/resume.pdf" 
+                href="CV-EDWARD-LAYNO-Latest.pdf" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="relative overflow-hidden group flex items-center gap-2 px-6 py-2.5 ml-2 bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-full transition-all duration-300 shadow-md hover:shadow-lg hover:shadow-blue-500/40 hover:-translate-y-0.5"
@@ -80,7 +80,7 @@ export default function RootLayout({
                 
                 {/* Content */}
                 <FaFileDownload className="text-[15px] relative z-10 transition-transform duration-300 group-hover:-translate-y-0.5 text-white" />
-                <span className="text-sm font-semibold tracking-wide relative z-10">Resume</span>
+                <span className="text-sm font-semibold tracking-wide relative z-10">CV</span>
               </a>
 
             </div>
