@@ -17,7 +17,7 @@ export const certificationsData = [
     title: "SPES Intern",
     issuer: "City Information Technology Office",
     date: "July - September 2024",
-    image: "/certifications/spes-intern.png", 
+    image: "/certifications/cit.jpg", 
     description: "Special Program for Employment of Students. Gained hands-on experience in municipal IT operations and support.",
   },
     {
@@ -52,7 +52,7 @@ export const certificationsData = [
     title: "Best in Capstone in Service Management Specialization",
     issuer: "Academic Award",
     date: "2026",
-    image: "/certifications/best-capstone.png", 
+    image: "/certifications/best-capstone.jpg", 
     description: "Awarded for demonstrating exceptional skills in systems development, project management, and service management methodologies.",
   },
 ];

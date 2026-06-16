@@ -2,19 +2,19 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import { FaReact, FaNodeJs, FaLaravel, FaUbuntu, FaNetworkWired, FaServer, FaDesktop } from "react-icons/fa";
-import { SiNextdotjs, SiSupabase, SiTailwindcss, SiTypescript } from "react-icons/si";
+import { FaReact, FaNodeJs, FaLaravel, FaNetworkWired, FaDesktop, FaWindows, FaProjectDiagram } from "react-icons/fa";
+import { SiNextdotjs, SiSupabase, SiTailwindcss, SiTypescript, SiVirtualbox } from "react-icons/si";
 
 export default function About() {
-  // Gumawa tayo ng state para sa Interactive Tabs
   const [activeTab, setActiveTab] = useState<"it" | "web">("it");
 
-  // Hinati natin ang skills para mas emphasize yung IT Support focus mo
+  // YUNG MGA BAGONG SKILLS MO SA IT & NETWORK
   const itSkills = [
     { name: "Hardware Diagnostics", icon: <FaDesktop className="text-gray-700 text-lg" /> },
     { name: "Network Troubleshooting", icon: <FaNetworkWired className="text-blue-600 text-lg" /> },
-    { name: "Ubuntu Server", icon: <FaUbuntu className="text-[#E95420] text-lg" /> },
-    { name: "Server Administration", icon: <FaServer className="text-gray-800 text-lg" /> },
+    { name: "Windows Server", icon: <FaWindows className="text-[#00A4EF] text-lg" /> },
+    { name: "Cisco Packet Tracer", icon: <FaProjectDiagram className="text-[#1BA0D7] text-lg" /> },
+    { name: "VirtualBox", icon: <SiVirtualbox className="text-[#183A61] text-lg" /> },
   ];
 
   const webSkills = [
@@ -30,7 +30,6 @@ export default function About() {
   return (
     <section id="about" className="min-h-screen flex flex-col justify-center py-24 border-t border-gray-200/50 relative overflow-hidden">
       
-      {/* INJECTED CUSTOM ANIMATIONS PARA SURE NA GAGANA AGAD */}
       <style>{`
         @keyframes float {
           0%, 100% { transform: translateY(0px); }
@@ -48,7 +47,6 @@ export default function About() {
         }
       `}</style>
 
-      {/* Decorative Background Glow */}
       <div className="absolute top-20 right-10 w-72 h-72 bg-blue-100/50 rounded-full blur-[100px] pointer-events-none z-0"></div>
       <div className="absolute -bottom-10 -left-10 w-80 h-80 bg-cyan-100/40 rounded-full blur-[100px] pointer-events-none z-0"></div>
 
@@ -58,10 +56,8 @@ export default function About() {
           {/* --- LEFT COLUMN: ANIMATED PICTURE --- */}
           <div className="lg:col-span-5 flex justify-center lg:justify-start">
             <div className="relative group animate-float">
-              {/* Spinning Glow Effect sa likod ng picture */}
               <div className="absolute -inset-4 bg-gradient-to-tr from-blue-600 via-cyan-400 to-blue-300 rounded-[3rem] blur-2xl opacity-30 group-hover:opacity-60 transition-opacity duration-700 animate-pulse"></div>
               
-              {/* Premium Image Frame */}
               <div className="relative w-64 h-64 md:w-80 md:h-80 lg:w-[400px] lg:h-[400px] rounded-[3rem] overflow-hidden border-[6px] border-white shadow-2xl shadow-blue-500/20 rotate-3 group-hover:rotate-0 transition-all duration-500">
                 <Image
                   src="/me.jpg" 
@@ -70,7 +66,6 @@ export default function About() {
                   priority 
                   className="object-cover scale-110 group-hover:scale-100 transition-transform duration-700"
                 />
-                {/* Overlay highlight */}
                 <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
               </div>
             </div>
@@ -100,7 +95,6 @@ export default function About() {
             {/* --- INTERACTIVE TABS PARA SA SKILLS --- */}
             <div className="mt-12 bg-white/60 backdrop-blur-sm p-2 rounded-2xl border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)]">
               
-              {/* Tab Buttons */}
               <div className="flex space-x-2 bg-gray-100/80 p-1.5 rounded-xl mb-6">
                 <button 
                   onClick={() => setActiveTab("it")}
@@ -124,13 +118,12 @@ export default function About() {
                 </button>
               </div>
 
-              {/* Dynamic Skills Display based on active tab */}
               <div className="flex flex-wrap gap-3 p-2 min-h-[120px] items-start">
                 {(activeTab === "it" ? itSkills : webSkills).map((skill, index) => (
                   <span 
                     key={skill.name} 
                     className="flex items-center gap-2.5 px-4 py-2 bg-white border border-gray-200 rounded-xl text-sm font-bold text-gray-700 shadow-sm hover:border-blue-400 hover:shadow-blue-500/20 hover:-translate-y-1 transition-all duration-300 animate-slide-up"
-                    style={{ animationDelay: `${index * 50}ms` }} // Staggered appearance
+                    style={{ animationDelay: `${index * 50}ms` }}
                   >
                     {skill.icon}
                     {skill.name}

@@ -54,7 +54,7 @@ export default function Certifications() {
     }
   };
 
-return (
+  return (
     <section id="certifications" className="py-32 overflow-hidden relative w-full">
       
       <div className="max-w-5xl mx-auto px-6 w-full mb-16 relative z-10">
@@ -79,24 +79,24 @@ return (
         {/* Floating Manual Buttons */}
         <button 
           onClick={scrollLeft}
-          className="absolute left-6 md:left-12 top-1/2 -translate-y-1/2 z-20 w-14 h-14 flex items-center justify-center bg-white/90 backdrop-blur-xl border border-gray-200/80 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] text-gray-700 hover:text-blue-600 hover:scale-110 hover:shadow-blue-500/20 opacity-0 group-hover:opacity-100 transition-all duration-300"
+          className="absolute left-4 md:left-12 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white/90 backdrop-blur-xl border border-gray-200/80 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] text-gray-700 hover:text-blue-600 hover:scale-110 hover:shadow-blue-500/20 opacity-0 group-hover:opacity-100 transition-all duration-300"
           aria-label="Previous"
         >
-          <FaChevronLeft className="text-xl pr-1" />
+          <FaChevronLeft className="text-lg md:text-xl pr-1" />
         </button>
 
         <button 
           onClick={scrollRight}
-          className="absolute right-6 md:right-12 top-1/2 -translate-y-1/2 z-20 w-14 h-14 flex items-center justify-center bg-white/90 backdrop-blur-xl border border-gray-200/80 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] text-gray-700 hover:text-blue-600 hover:scale-110 hover:shadow-blue-500/20 opacity-0 group-hover:opacity-100 transition-all duration-300"
+          className="absolute right-4 md:right-12 top-1/2 -translate-y-1/2 z-20 w-12 h-12 md:w-14 md:h-14 flex items-center justify-center bg-white/90 backdrop-blur-xl border border-gray-200/80 rounded-full shadow-[0_8px_30px_rgb(0,0,0,0.12)] text-gray-700 hover:text-blue-600 hover:scale-110 hover:shadow-blue-500/20 opacity-0 group-hover:opacity-100 transition-all duration-300"
           aria-label="Next"
         >
-          <FaChevronRight className="text-xl pl-1" />
+          <FaChevronRight className="text-lg md:text-xl pl-1" />
         </button>
 
         {/* Sliding Track (Edge-to-Edge with Smooth Fade) */}
         <div 
           ref={scrollRef}
-          className="flex overflow-x-hidden gap-8 px-10 pb-12 pt-4 items-stretch"
+          className="flex overflow-x-hidden gap-6 md:gap-8 px-6 md:px-10 pb-12 pt-4 items-stretch"
           style={{
             maskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)",
             WebkitMaskImage: "linear-gradient(to right, transparent, black 10%, black 90%, transparent)"
@@ -106,21 +106,22 @@ return (
             <div 
               key={index}
               onClick={() => setSelectedImage(cert.image)}
-              className="w-[360px] shrink-0 cursor-pointer group h-auto"
+              // DITO INAPPLY YUNG MOBILE FIX (w-[280px] sa mobile, w-[360px] sa desktop)
+              className="w-[280px] md:w-[360px] shrink-0 cursor-pointer group h-auto"
             >
               {/* PREMIUM GLASSMORPHISM CARD DESIGN */}
-              <div className="relative bg-white/70 backdrop-blur-lg rounded-[2rem] p-8 h-full flex flex-col shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] border border-white/50 transition-all duration-500 group-hover:-translate-y-3 overflow-hidden">
+              <div className="relative bg-white/70 backdrop-blur-lg rounded-[2rem] p-6 md:p-8 h-full flex flex-col shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.15)] border border-white/50 transition-all duration-500 group-hover:-translate-y-3 overflow-hidden">
                 
                 {/* Subtle Inner Gradient on Hover */}
                 <div className="absolute inset-0 bg-gradient-to-br from-blue-50/30 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
                 <div className="relative z-10 flex flex-col h-full">
                   {/* Top Section: Icon & Year Badge */}
-                  <div className="flex justify-between items-start mb-8">
+                  <div className="flex justify-between items-start mb-6 md:mb-8">
                     {/* Premium Gradient Icon Container */}
-                    <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-400 p-[1px] shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-shadow">
+                    <div className="w-12 h-12 md:w-14 md:h-14 rounded-2xl bg-gradient-to-br from-blue-600 to-cyan-400 p-[1px] shadow-lg shadow-blue-500/20 group-hover:shadow-blue-500/40 transition-shadow">
                       <div className="w-full h-full bg-white rounded-[15px] flex items-center justify-center">
-                        <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <svg className="w-5 h-5 md:w-6 md:h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
                         </svg>
                       </div>
@@ -134,10 +135,10 @@ return (
                   
                   {/* Text Content */}
                   <div className="flex-grow">
-                    <p className="text-[11px] font-bold tracking-widest uppercase text-blue-600 mb-2">
+                    <p className="text-[10px] md:text-[11px] font-bold tracking-widest uppercase text-blue-600 mb-2">
                       {cert.issuer}
                     </p>
-                    <h3 className="text-xl font-extrabold text-gray-900 leading-snug mb-3 group-hover:text-blue-600 transition-colors duration-300">
+                    <h3 className="text-lg md:text-xl font-extrabold text-gray-900 leading-snug mb-3 group-hover:text-blue-600 transition-colors duration-300">
                       {cert.title}
                     </h3>
                     <p className="text-gray-500 text-sm leading-relaxed line-clamp-3">
@@ -146,8 +147,8 @@ return (
                   </div>
 
                   {/* Elegant View Button */}
-                  <div className="mt-8 pt-5 border-t border-gray-200/50 flex items-center justify-between">
-                    <span className="text-sm font-semibold text-gray-400 group-hover:text-blue-600 transition-colors">
+                  <div className="mt-6 md:mt-8 pt-4 md:pt-5 border-t border-gray-200/50 flex items-center justify-between">
+                    <span className="text-xs md:text-sm font-semibold text-gray-400 group-hover:text-blue-600 transition-colors">
                       View Document
                     </span>
                     <span className="w-8 h-8 rounded-full bg-white flex items-center justify-center group-hover:bg-blue-50 transition-colors shadow-sm">
