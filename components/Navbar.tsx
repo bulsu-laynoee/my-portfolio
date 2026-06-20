@@ -8,7 +8,9 @@ import { FaBars, FaTimes, FaFileDownload, FaMoon, FaSun } from "react-icons/fa";
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const { theme, setTheme } = useTheme();
+  
+  // DITO TAYO NAGBAGO: Idinagdag natin ang 'resolvedTheme'
+  const { theme, setTheme, resolvedTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
 
   // Iwas hydration mismatch
@@ -37,6 +39,11 @@ export default function Navbar() {
     { name: "Contact", href: "/#contact" }
   ];
 
+  // HELPER FUNCTION: Para sure na magsi-switch based sa totoong kulay sa screen
+  const toggleTheme = () => {
+    setTheme(resolvedTheme === "dark" ? "light" : "dark");
+  };
+
   return (
     <>
       <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-300 ${scrolled ? "bg-white/90 dark:bg-slate-950/90 backdrop-blur-md shadow-sm py-4 border-b border-gray-200/50 dark:border-gray-800/50" : "bg-transparent py-6"}`}>
@@ -57,11 +64,12 @@ export default function Navbar() {
             {/* DARK/LIGHT MODE TOGGLE (DESKTOP) */}
             {mounted && (
               <button 
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
+                onClick={toggleTheme}
                 className="text-lg p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors text-gray-600 dark:text-gray-300"
                 aria-label="Toggle Dark Mode"
               >
-                {theme === "dark" ? <FaSun className="text-yellow-400" /> : <FaMoon />}
+                {/* Ginamit ang resolvedTheme para i-check ang icon */}
+                {resolvedTheme === "dark" ? <FaSun className="text-yellow-400" /> : <FaMoon />}
               </button>
             )}
 
@@ -74,14 +82,16 @@ export default function Navbar() {
           <div className="md:hidden flex items-center gap-4 z-[110]">
             {mounted && (
               <button 
-                onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="text-xl p-2 rounded-full text-gray-600 dark:text-gray-300"
+                onClick={toggleTheme}
+                className="text-xl p-2 rounded-full text-gray-600 dark:text-gray-300 active:scale-90 transition-transform"
+                aria-label="Toggle Dark Mode"
               >
-                {theme === "dark" ? <FaSun className="text-yellow-400" /> : <FaMoon />}
+                {/* Ginamit ang resolvedTheme para i-check ang icon */}
+                {resolvedTheme === "dark" ? <FaSun className="text-yellow-400" /> : <FaMoon />}
               </button>
             )}
             <button 
-              className="text-gray-900 dark:text-white text-2xl focus:outline-none" 
+              className="text-gray-900 dark:text-white text-2xl focus:outline-none active:scale-90 transition-transform" 
               onClick={() => setIsOpen(true)}
             >
               <FaBars />
@@ -96,7 +106,7 @@ export default function Navbar() {
       >
         <div className="flex justify-between items-center p-6 border-b border-gray-100 dark:border-gray-800">
           <span className="text-xl font-extrabold text-blue-600 dark:text-cyan-500">Menu</span>
-          <button onClick={() => setIsOpen(false)} className="text-2xl text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800 p-2 rounded-full">
+          <button onClick={() => setIsOpen(false)} className="text-2xl text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800 p-2 rounded-full active:scale-90 transition-transform">
             <FaTimes />
           </button>
         </div>
