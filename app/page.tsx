@@ -7,16 +7,14 @@ import Contact from "@/components/Contact";
 
 export default function Home() {
   return (
-    <>
-      {/* GINAWA NATING FULL WIDTH */}
-      <div className="w-full px-6 md:px-12 lg:px-20">
-        <Hero />
-        <About />
-        <Experience />
-        <Projects />
-        <Certifications />
-        <Contact />
-      </div>
-    </>
+    // TINANGGAL NATIN ANG max-w-5xl DITO PARA EDGE-TO-EDGE NA ANG BACKGROUNDS
+    <div className="w-full flex flex-col">
+      <Hero />
+      <About />
+      <Experience />
+      <Projects />
+      <Certifications />
+      <Contact />
+    </div>
   );
 }
