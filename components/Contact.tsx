@@ -53,23 +53,23 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="min-h-screen flex flex-col justify-center py-24 md:py-32 border-t border-gray-200/50 relative overflow-hidden">
+    <section id="contact" className="min-h-screen flex flex-col justify-center py-24 md:py-32 border-t border-gray-200/50 dark:border-gray-800/50 relative overflow-hidden transition-colors duration-300">
       
-      {/* Background Glows */}
-      <div className="absolute top-40 right-0 w-96 h-96 bg-blue-100/40 rounded-full blur-[120px] pointer-events-none z-0"></div>
+      {/* Background Glows (Dark Mode Ready) */}
+      <div className="absolute top-40 right-0 w-96 h-96 bg-blue-100/40 dark:bg-blue-900/20 rounded-full blur-[120px] pointer-events-none z-0 transition-colors duration-500"></div>
       
       <div className="max-w-6xl mx-auto px-6 w-full relative z-10">
         
         {/* --- CONSISTENT SECTION HEADER --- */}
         <div className="mb-12 md:mb-16">
-          <h2 className="text-xs md:text-sm font-bold tracking-widest uppercase text-blue-600 mb-3 flex items-center gap-2">
-            <span className="w-8 h-[2px] bg-blue-600 rounded-full"></span>
+          <h2 className="text-xs md:text-sm font-bold tracking-widest uppercase text-blue-600 dark:text-cyan-400 mb-3 flex items-center gap-2">
+            <span className="w-8 h-[2px] bg-blue-600 dark:bg-cyan-400 rounded-full"></span>
             Get In Touch
           </h2>
-          <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+          <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
             Let's Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Together</span>
           </h3>
-          <p className="text-gray-500 text-base md:text-lg mt-4 md:mt-6 max-w-2xl leading-relaxed">
+          <p className="text-gray-500 dark:text-gray-400 text-base md:text-lg mt-4 md:mt-6 max-w-2xl leading-relaxed">
             Have a project in mind, need technical support, or just want to say hi? Send me a message and I'll get back to you as soon as possible.
           </p>
         </div>
@@ -78,18 +78,18 @@ export default function Contact() {
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-8 lg:gap-10">
           
           {/* =========================================
-              LEFT COLUMN: CONTACT FORM (3 Columns sa Desktop)
+              LEFT COLUMN: CONTACT FORM
               ========================================= */}
-          <div className="lg:col-span-3 bg-white/80 backdrop-blur-md border border-gray-100 rounded-[2rem] p-6 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] h-full flex flex-col justify-center">
+          <div className="lg:col-span-3 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border border-gray-100 dark:border-gray-800 rounded-[2rem] p-6 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none h-full flex flex-col justify-center transition-colors">
             
             {status === "success" ? (
-              <div className="bg-green-50/50 border border-green-200/60 rounded-2xl p-8 text-center animate-fade-in flex flex-col items-center justify-center h-full min-h-[350px]">
-                <FaCheckCircle className="text-6xl text-green-500 mb-6 drop-shadow-sm" />
-                <h3 className="text-2xl font-bold text-gray-900 mb-3">Message Sent!</h3>
-                <p className="text-green-700 text-base mb-8 px-4">Thank you for reaching out. I'll check my email and get back to you shortly.</p>
+              <div className="bg-green-50/50 dark:bg-green-900/20 border border-green-200/60 dark:border-green-800/50 rounded-2xl p-8 text-center animate-fade-in flex flex-col items-center justify-center h-full min-h-[350px]">
+                <FaCheckCircle className="text-6xl text-green-500 dark:text-green-400 mb-6 drop-shadow-sm" />
+                <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">Message Sent!</h3>
+                <p className="text-green-700 dark:text-green-300 text-base mb-8 px-4">Thank you for reaching out. I'll check my email and get back to you shortly.</p>
                 <button 
                   onClick={() => setStatus("idle")}
-                  className="px-6 py-2.5 bg-white border border-green-200 text-green-700 rounded-full hover:bg-green-50 active:scale-95 transition-all font-semibold text-sm shadow-sm"
+                  className="px-6 py-2.5 bg-white dark:bg-slate-800 border border-green-200 dark:border-green-800 text-green-700 dark:text-green-400 rounded-full hover:bg-green-50 dark:hover:bg-slate-700 active:scale-95 transition-all font-semibold text-sm shadow-sm"
                   suppressHydrationWarning
                 >
                   Send another message
@@ -99,53 +99,53 @@ export default function Contact() {
               <form className="space-y-5" onSubmit={handleSubmit} suppressHydrationWarning>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
-                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 ml-1">Your Name</label>
+                    <label className="block text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2 ml-1">Your Name</label>
                     <input 
                       type="text" 
                       name="name"
                       required
-                      placeholder="Enter your name" 
-                      className="w-full bg-slate-50 border border-gray-200 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 focus:bg-white transition-all placeholder-gray-400 text-gray-800 text-sm"
+                      placeholder="John Doe" 
+                      className="w-full bg-slate-50 dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 dark:focus:border-cyan-500 focus:bg-white dark:focus:bg-slate-800 transition-all placeholder-gray-400 dark:placeholder-gray-500 text-gray-800 dark:text-white text-sm"
                       suppressHydrationWarning
                     />
                   </div>
                   <div>
-                    <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 ml-1">Email Address</label>
+                    <label className="block text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2 ml-1">Email Address</label>
                     <input 
                       type="email" 
                       name="email"
                       required
-                      placeholder="Enter your email" 
-                      className="w-full bg-slate-50 border border-gray-200 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 focus:bg-white transition-all placeholder-gray-400 text-gray-800 text-sm"
+                      placeholder="john@example.com" 
+                      className="w-full bg-slate-50 dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 dark:focus:border-cyan-500 focus:bg-white dark:focus:bg-slate-800 transition-all placeholder-gray-400 dark:placeholder-gray-500 text-gray-800 dark:text-white text-sm"
                       suppressHydrationWarning
                     />
                   </div>
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 ml-1">Subject</label>
+                  <label className="block text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2 ml-1">Subject</label>
                   <input 
                     type="text" 
                     name="subject"
                     required
                     placeholder="How can I help you?" 
-                    className="w-full bg-slate-50 border border-gray-200 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 focus:bg-white transition-all placeholder-gray-400 text-gray-800 text-sm"
+                    className="w-full bg-slate-50 dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 dark:focus:border-cyan-500 focus:bg-white dark:focus:bg-slate-800 transition-all placeholder-gray-400 dark:placeholder-gray-500 text-gray-800 dark:text-white text-sm"
                     suppressHydrationWarning
                   />
                 </div>
                 <div>
-                  <label className="block text-xs font-bold text-gray-500 uppercase tracking-wider mb-2 ml-1">Message</label>
+                  <label className="block text-xs font-bold text-gray-500 dark:text-gray-400 uppercase tracking-wider mb-2 ml-1">Message</label>
                   <textarea 
                     name="message"
                     required
                     placeholder="Tell me about your project or concern..." 
                     rows={5}
-                    className="w-full bg-slate-50 border border-gray-200 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 focus:bg-white transition-all placeholder-gray-400 text-gray-800 text-sm resize-none"
+                    className="w-full bg-slate-50 dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 dark:focus:border-cyan-500 focus:bg-white dark:focus:bg-slate-800 transition-all placeholder-gray-400 dark:placeholder-gray-500 text-gray-800 dark:text-white text-sm resize-none"
                     suppressHydrationWarning
                   ></textarea>
                 </div>
 
                 {status === "error" && (
-                  <p className="text-red-500 text-sm font-medium pl-2">Something went wrong. Please try again later.</p>
+                  <p className="text-red-500 dark:text-red-400 text-sm font-medium pl-2">Something went wrong. Please try again later.</p>
                 )}
 
                 <div className="pt-2">
@@ -173,9 +173,9 @@ export default function Contact() {
           </div>
 
           {/* =========================================
-              RIGHT COLUMN: CONTACT INFO (2 Columns sa Desktop)
+              RIGHT COLUMN: CONTACT INFO
               ========================================= */}
-          <div className="lg:col-span-2 flex flex-col h-full bg-gradient-to-br from-slate-900 to-slate-800 p-8 md:p-10 rounded-[2rem] text-white shadow-xl relative overflow-hidden">
+          <div className="lg:col-span-2 flex flex-col h-full bg-gradient-to-br from-slate-900 to-slate-800 p-8 md:p-10 rounded-[2rem] text-white shadow-xl relative overflow-hidden ring-1 ring-white/10 dark:ring-white/5">
             
             {/* Background Decorations */}
             <div className="absolute -top-24 -right-24 w-64 h-64 bg-blue-500/20 rounded-full blur-3xl pointer-events-none"></div>
