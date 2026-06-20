@@ -1,15 +1,35 @@
 @import "tailwindcss";
 
+/* 1. ITO ANG PINAKA-IMPORTANTE: Pinipilit nito ang Tailwind na makinig sa Dark Mode Button (.dark class) */
+@custom-variant dark (&:is(.dark *));
+
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-heading: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto;
+  --accent: #06b6d4;
+  --card-bg: rgba(255,255,255,0.85);
+  --card-fg: #111827;
+  --card-border: rgba(15,23,42,0.06);
+  --card-shadow: 0 8px 30px rgba(2,6,23,0.06);
+  --btn-bg: linear-gradient(90deg, #2563eb 0%, #06b6d4 100%);
+  --btn-fg: #ffffff;
+  --nav-bg: rgba(255,255,255,0.9);
 }
 
-/* Support class-based dark mode (used by next-themes). This makes
-   toggling the `dark` class update the CSS variables immediately. */
+/* 2. DITO KUKUHA NG KULAY ANG BUTTON KAPAG NAKA-DARK MODE NA */
 :root.dark {
   --background: #0a0a0a;
   --foreground: #ededed;
+  --accent: #22d3ee;
+  --card-bg: rgba(8,10,16,0.6);
+  --card-fg: #e6eef8;
+  --card-border: rgba(255,255,255,0.04);
+  --card-shadow: 0 8px 30px rgba(2,6,23,0.6);
+  --btn-bg: linear-gradient(90deg, #0ea5e9 0%, #06b6d4 100%);
+  --btn-fg: #071124;
+  --nav-bg: rgba(6,8,12,0.6);
 }
 
 @theme inline {
@@ -19,53 +39,13 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
 
-/* Theme tokens (colors, fonts, UI elements) */
-:root {
-  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  --font-heading: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto;
-
-  --accent: #06b6d4;
-
-  --card-bg: rgba(255,255,255,0.85);
-  --card-fg: #111827;
-  --card-border: rgba(15,23,42,0.06);
-  --card-shadow: 0 8px 30px rgba(2,6,23,0.06);
-
-  --btn-bg: linear-gradient(90deg, #2563eb 0%, #06b6d4 100%);
-  --btn-fg: #ffffff;
-  --nav-bg: rgba(255,255,255,0.9);
-}
-
-:root.dark {
-  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
-  --font-heading: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto;
-
-  --accent: #22d3ee;
-
-  --card-bg: rgba(8,10,16,0.6);
-  --card-fg: #e6eef8;
-  --card-border: rgba(255,255,255,0.04);
-  --card-shadow: 0 8px 30px rgba(2,6,23,0.6);
-
-  --btn-bg: linear-gradient(90deg, #0ea5e9 0%, #06b6d4 100%);
-  --btn-fg: #071124;
-  --nav-bg: rgba(6,8,12,0.6);
-}
-
-/* Themed utility classes that use the CSS tokens above. Add these to cards/buttons to make them theme-aware. */
+/* Themed utility classes */
 .themed-card {
   background: var(--card-bg);
   color: var(--card-fg);
@@ -80,17 +60,15 @@ body {
 
 .themed-heading { color: var(--card-fg); }
 
-/* I-setup ang animation variable sa loob ng @theme (Tailwind v4 format) */
+/* Animations */
 @theme {
   --animate-blink: blink 1s step-end infinite;
 }
 
-/* Idagdag ang mismong keyframes */
 @keyframes blink {
   0%, 100% { opacity: 1; }
   50% { opacity: 0; }
 }
-/* IDAGDAG ITO SA PINAKABABA NG GLOBALS.CSS */
 
 .my-cursor {
   animation: custom-blink 1s step-end infinite;
@@ -104,19 +82,14 @@ body {
 /* --- INFINITE SLIDER ANIMATION --- */
 @keyframes scroll {
   0% { transform: translateX(0); }
-  /* Mag-i-slide pakanan pakaliwa. Ang -50% ay kailangan dahil dodoblehin natin ang items sa code para maging seamless */
   100% { transform: translateX(-50%); }
 }
 
 .animate-scroll {
-  /* 40s ang bilis. Pwede mong taasan para bumagal, o babaan para bumilis */
   animation: scroll 40s linear infinite;
-  /* Kailangan ng width na kayang hawakan lahat ng items */
   width: max-content;
 }
 
-/* Para huminto yung pag-slide kapag tinapatan ng mouse yung card */
 .animate-scroll:hover {
   animation-play-state: paused;
 }
-

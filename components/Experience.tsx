@@ -8,7 +8,6 @@ export default function Experience() {
   const [activeExp, setActiveExp] = useState<any>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
-  // Ito yung exact data na ginawa mo na may kumpletong pictures
   const experiences = [
     {
       role: "Freelance Web Developer",
@@ -87,104 +86,104 @@ export default function Experience() {
   };
 
   return (
-    <section id="experience" className="min-h-screen flex flex-col justify-center py-24 md:py-32 border-t border-gray-200/50 relative overflow-hidden">
+    <section id="experience" className="min-h-screen flex flex-col justify-center py-24 md:py-32 border-t border-gray-200/50 dark:border-gray-800/50 relative overflow-hidden transition-colors duration-300">
       
-      <div className="absolute top-40 left-0 w-96 h-96 bg-blue-100/40 rounded-full blur-[120px] pointer-events-none z-0"></div>
-      <div className="absolute bottom-20 right-0 w-80 h-80 bg-cyan-100/40 rounded-full blur-[100px] pointer-events-none z-0"></div>
+      {/* Dark Mode Adjusted Orbs */}
+      <div className="absolute top-40 left-0 w-96 h-96 bg-blue-100/40 dark:bg-blue-900/20 rounded-full blur-[120px] pointer-events-none z-0 transition-colors duration-500"></div>
+      <div className="absolute bottom-20 right-0 w-80 h-80 bg-cyan-100/40 dark:bg-cyan-900/20 rounded-full blur-[100px] pointer-events-none z-0 transition-colors duration-500"></div>
 
       <div className="max-w-4xl mx-auto px-6 w-full relative z-10">
         
+        {/* Section Header */}
         <div className="mb-12 md:mb-16">
-          <h2 className="text-xs md:text-sm font-bold tracking-widest uppercase text-blue-600 mb-3 flex items-center gap-2">
-            <span className="w-8 h-[2px] bg-blue-600 rounded-full"></span>
+          <h2 className="text-xs md:text-sm font-bold tracking-widest uppercase text-blue-600 dark:text-cyan-400 mb-3 flex items-center gap-2">
+            <span className="w-8 h-[2px] bg-blue-600 dark:bg-cyan-400 rounded-full"></span>
             Career Path
           </h2>
-          <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900 tracking-tight">
+          <h3 className="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white tracking-tight">
             Work <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-500">Experience</span>
           </h3>
-          <p className="text-gray-500 text-base md:text-lg mt-4 md:mt-6 leading-relaxed max-w-2xl">
+          <p className="text-gray-500 dark:text-gray-400 text-base md:text-lg mt-4 md:mt-6 leading-relaxed max-w-2xl">
             My professional journey. Click on any role to view pictures and proof of my work.
           </p>
         </div>
 
         <div className="relative">
-          {/* ITO YUNG TIMELINE LINE (Nakatago sa Mobile, nakikita lang sa Desktop) */}
-          <div className="hidden md:block absolute left-[23px] top-4 bottom-0 w-[2px] bg-gradient-to-b from-blue-300 via-gray-200 to-transparent"></div>
+          {/* TIMELINE LINE (Desktop Only, Dark Mode Ready) */}
+          <div className="hidden md:block absolute left-[23px] top-4 bottom-0 w-[2px] bg-gradient-to-b from-blue-300 dark:from-blue-900 via-gray-200 dark:via-gray-800 to-transparent"></div>
 
-          {/* space-y-6 sa mobile para hindi masyadong layo-layo, space-y-12 sa desktop */}
           <div className="space-y-6 md:space-y-12">
             {experiences.map((exp, index) => (
               <div key={index} className="group cursor-pointer" onClick={() => openProof(exp)}>
                 
                 {/* =========================================
-                    1. MOBILE UI (SARILING DESIGN PANG-PHONE) 
+                    1. MOBILE UI (App Style Cards)
                     ========================================= */}
-                <div className="md:hidden w-full bg-white/90 backdrop-blur-md border border-gray-100 shadow-[0_8px_30px_rgb(0,0,0,0.04)] rounded-3xl p-6 flex flex-col active:scale-[0.98] transition-transform">
+                <div className="md:hidden w-full bg-white/90 dark:bg-slate-900/90 backdrop-blur-md border border-gray-100 dark:border-gray-800 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none rounded-3xl p-6 flex flex-col active:scale-[0.98] transition-all">
                   <div className="flex items-start gap-4 mb-4">
-                    {/* Icon na nasa loob mismo ng card para hindi kumain ng space sa labas */}
                     <div className={`w-14 h-14 flex-shrink-0 rounded-[1.25rem] flex items-center justify-center bg-gradient-to-br ${exp.gradient} shadow-md`}>
                       {exp.icon}
                     </div>
                     <div>
-                      <h3 className="font-extrabold text-lg text-gray-900 leading-tight">{exp.role}</h3>
-                      <p className="text-blue-600 font-bold text-[10px] tracking-widest uppercase mt-1">{exp.company}</p>
+                      <h3 className="font-extrabold text-lg text-gray-900 dark:text-white leading-tight">{exp.role}</h3>
+                      <p className="text-blue-600 dark:text-cyan-400 font-bold text-[10px] tracking-widest uppercase mt-1">{exp.company}</p>
                     </div>
                   </div>
                   
-                  <span className="w-fit px-3 py-1 bg-gray-50 border border-gray-100 text-gray-500 text-[10px] font-bold uppercase rounded-full mb-3">
+                  <span className="w-fit px-3 py-1 bg-gray-50 dark:bg-slate-800 border border-gray-100 dark:border-gray-700 text-gray-500 dark:text-gray-300 text-[10px] font-bold uppercase rounded-full mb-3">
                     {exp.date}
                   </span>
                   
-                  <p className="text-gray-600 text-sm leading-relaxed mb-5">
+                  <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed mb-5">
                     {exp.description}
                   </p>
 
-                  <div className="mt-auto pt-4 border-t border-gray-100 flex items-center justify-between">
-                    <span className="flex items-center gap-2 text-xs font-bold text-gray-400">
+                  <div className="mt-auto pt-4 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between">
+                    <span className="flex items-center gap-2 text-xs font-bold text-gray-400 dark:text-gray-500">
                       <FaCameraRetro className="text-sm" /> View Proof
                     </span>
-                    <div className="w-8 h-8 rounded-full bg-blue-50 flex items-center justify-center text-blue-600">
+                    <div className="w-8 h-8 rounded-full bg-blue-50 dark:bg-slate-800 flex items-center justify-center text-blue-600 dark:text-cyan-400">
                       <FaChevronRight className="text-[10px]" />
                     </div>
                   </div>
                 </div>
 
                 {/* =========================================
-                    2. DESKTOP UI (YUNG PREMIUM TIMELINE MO) 
+                    2. DESKTOP UI (Premium Timeline)
                     ========================================= */}
                 <div className="hidden md:flex items-start relative">
                   <div className={`absolute left-0 top-0 w-12 h-12 rounded-full flex items-center justify-center bg-gradient-to-br ${exp.gradient} shadow-lg shadow-blue-500/30 z-10 transform transition-transform duration-500 group-hover:scale-110 group-hover:rotate-12`}>
                     {exp.icon}
                   </div>
                   
-                  <div className="ml-20 w-full bg-white/70 backdrop-blur-lg border border-white/60 rounded-[2rem] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.12)] transition-all duration-500 group-hover:-translate-y-2 relative overflow-hidden flex flex-col">
-                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
+                  <div className="ml-20 w-full bg-white/70 dark:bg-slate-900/70 backdrop-blur-lg border border-white/60 dark:border-slate-700/50 rounded-[2rem] p-8 md:p-10 shadow-[0_8px_30px_rgb(0,0,0,0.04)] dark:shadow-none hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.12)] transition-all duration-500 group-hover:-translate-y-2 relative overflow-hidden flex flex-col">
+                    <div className="absolute inset-0 bg-gradient-to-br from-blue-50/50 dark:from-blue-900/10 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
 
                     <div className="relative z-10 flex-grow">
                       <div className="flex flex-col md:flex-row md:items-center justify-between mb-4 gap-2">
                         <div>
-                          <h3 className="text-2xl font-extrabold text-gray-900 group-hover:text-blue-600 transition-colors duration-300">
+                          <h3 className="text-2xl font-extrabold text-gray-900 dark:text-white group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors duration-300">
                             {exp.role}
                           </h3>
-                          <p className="text-blue-600 font-semibold text-sm tracking-wide uppercase mt-1">
+                          <p className="text-blue-600 dark:text-cyan-400 font-semibold text-sm tracking-wide uppercase mt-1">
                             {exp.company}
                           </p>
                         </div>
-                        <span className="inline-flex items-center justify-center px-4 py-1.5 bg-gray-50 border border-gray-100 text-gray-500 text-xs font-bold uppercase tracking-wider rounded-full shadow-sm whitespace-nowrap">
+                        <span className="inline-flex items-center justify-center px-4 py-1.5 bg-gray-50 dark:bg-slate-800 border border-gray-100 dark:border-gray-700 text-gray-500 dark:text-gray-300 text-xs font-bold uppercase tracking-wider rounded-full shadow-sm whitespace-nowrap">
                           {exp.date}
                         </span>
                       </div>
-                      <p className="text-gray-600 leading-relaxed text-base">
+                      <p className="text-gray-600 dark:text-gray-400 leading-relaxed text-base">
                         {exp.description}
                       </p>
                     </div>
 
-                    <div className="mt-8 pt-5 border-t border-gray-100 flex items-center justify-between relative z-10">
-                      <span className="flex items-center gap-2 text-sm font-bold text-gray-400 group-hover:text-blue-600 transition-colors">
+                    <div className="mt-8 pt-5 border-t border-gray-100 dark:border-gray-800 flex items-center justify-between relative z-10">
+                      <span className="flex items-center gap-2 text-sm font-bold text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-cyan-400 transition-colors">
                         <FaCameraRetro className="text-lg" /> View Proof of Work
                       </span>
-                      <span className="w-8 h-8 rounded-full bg-gray-50 flex items-center justify-center group-hover:bg-blue-50 transition-colors">
-                        <FaChevronRight className="text-gray-400 group-hover:text-blue-600 text-xs" />
+                      <span className="w-8 h-8 rounded-full bg-gray-50 dark:bg-slate-800 flex items-center justify-center group-hover:bg-blue-50 dark:group-hover:bg-slate-700 transition-colors">
+                        <FaChevronRight className="text-gray-400 dark:text-gray-500 group-hover:text-blue-600 dark:group-hover:text-cyan-400 text-xs" />
                       </span>
                     </div>
                   </div>
@@ -203,11 +202,11 @@ export default function Experience() {
           onClick={closeProof}
         >
           <div 
-            className="relative w-full max-w-5xl h-[90vh] md:h-[85vh] bg-black/80 border border-white/10 rounded-3xl shadow-2xl overflow-hidden flex flex-col"
+            className="relative w-full max-w-5xl h-[90vh] md:h-[85vh] bg-black/90 border border-white/10 rounded-3xl shadow-2xl overflow-hidden flex flex-col"
             onClick={(e) => e.stopPropagation()} 
           >
             {/* Modal Header */}
-            <div className="flex justify-between items-center p-4 md:p-6 bg-black/50 border-b border-white/10 w-full z-20">
+            <div className="flex justify-between items-center p-4 md:p-6 bg-black border-b border-white/10 w-full z-20">
               <div>
                 <h3 className="text-lg md:text-2xl font-bold text-white drop-shadow-md">
                   {activeExp.company}
