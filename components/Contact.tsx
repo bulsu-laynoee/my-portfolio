@@ -104,7 +104,7 @@ export default function Contact() {
                       type="text" 
                       name="name"
                       required
-                      placeholder="John Doe" 
+                      placeholder="Enter your name" 
                       className="w-full bg-slate-50 dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 dark:focus:border-cyan-500 focus:bg-white dark:focus:bg-slate-800 transition-all placeholder-gray-400 dark:placeholder-gray-500 text-gray-800 dark:text-white text-sm"
                       suppressHydrationWarning
                     />
@@ -115,7 +115,7 @@ export default function Contact() {
                       type="email" 
                       name="email"
                       required
-                      placeholder="john@example.com" 
+                      placeholder="Enter your email" 
                       className="w-full bg-slate-50 dark:bg-slate-800/50 border border-gray-200 dark:border-gray-700 rounded-xl px-4 py-3.5 focus:outline-none focus:ring-2 focus:ring-blue-500/50 focus:border-blue-500 dark:focus:border-cyan-500 focus:bg-white dark:focus:bg-slate-800 transition-all placeholder-gray-400 dark:placeholder-gray-500 text-gray-800 dark:text-white text-sm"
                       suppressHydrationWarning
                     />
