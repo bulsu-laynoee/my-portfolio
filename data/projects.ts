@@ -10,7 +10,7 @@ export const projectsData = [
       "/projects/ParkBulsu-2.jpg"
     ],
     tags: ["Web & Mobile", "System Analytics", "QR System"],
-    techStack: ["Next.js", "Laravel", "Tailwind CSS", "MySQL"],
+    techStack: ["Next.js", "Laravel", "Tailwind CSS", "MySQL", "React Native"],
   },
   {
     slug: "luxury-level",
@@ -21,8 +21,8 @@ export const projectsData = [
     gallery: [
       "/projects/luxlevel-screenshot.png"
     ],
-    tags: ["Web", "Automation", "E-Commerce"],
-    techStack: ["React", "Next.js", "Tailwind CSS", "Supabase"],
+    tags: ["Web", "Automation", "E-Commerce", "Web Scraping"],
+    techStack: ["React", "Next.js", "Tailwind CSS", "PostgreSQL"],
     liveUrl: "https://www.luxurylevelco.com/",
   },
   {
@@ -37,30 +37,18 @@ export const projectsData = [
     tags: ["Automation", "Google Apps Script", "API"],
     techStack: ["Google Apps Script", "Google Sheets", "JavaScript"],
   },
-   /*{
-    slug: "scale-up-philippines",
-    title: "Scale Up Web Scraper",
-    shortDescription: "A custom Puppeteer web scraper to synchronize product data directly into a Supabase database.",
-    fullDescription: "A backend automation tool built to seamlessly scrape luxury product data. Using Puppeteer, the script fetches detailed product information such as brand names, prices, and images from target sources, and automatically synchronizes this data into a Supabase database for administrative review before going live.",
-    image: "/projects/SU-PH.jpg",
-    gallery: [
-      "/projects/scraper-screenshot.png"
-    ],
-    tags: ["Backend", "Puppeteer", "Data Synchronization"],
-    techStack: ["Node.js", "Puppeteer", "JavaScript", "Supabase"],
-    liveUrl: "https://scaleupphilippines.com/",
-  }
- {
+{
     slug: "scale-up-philippines",
     title: "Scale Up - Staffing & Recruitment Management System",
-    shortDescription: "A custom Puppeteer web scraper to synchronize product data directly into a Supabase database.",
-    fullDescription: "A backend automation tool built to seamlessly scrape luxury product data. Using Puppeteer, the script fetches detailed product information such as brand names, prices, and images from target sources, and automatically synchronizes this data into a Supabase database for administrative review before going live.",
+    shortDescription: "A specialized recruitment portal engineered to automate client onboarding ('Hire a VA') and streamline virtual assistant application workflows.",
+    fullDescription: "A specialized recruitment portal designed to connect global businesses with top-tier Virtual Assistants. I engineered the core 'Hire a VA' client intake and 'Become a VA' application workflows, implementing an automated data pipeline between MySQL and Google Sheets to eliminate manual encoding and accelerate the agency's talent-matching process.",
     image: "/projects/SU-PH.jpg",
     gallery: [
-      "/projects/scraper-screenshot.png"
+      "/projects/SU-PH.jpg",
+      //"/projects/scaleup-form.jpg" 
     ],
-    tags: ["Backend"],
+    tags: ["Full-Stack", "Automation"],
     techStack: ["HTML", "CSS", "JavaScript", "MySQL", "Google Sheets"],
     liveUrl: "https://scaleupphilippines.com/",
-  }*/
+  }
 ];
